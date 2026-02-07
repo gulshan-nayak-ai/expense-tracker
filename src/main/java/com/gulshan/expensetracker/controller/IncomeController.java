@@ -1,5 +1,6 @@
 package com.gulshan.expensetracker.controller;
 
+import com.gulshan.expensetracker.dto.IncomeDTO;
 import com.gulshan.expensetracker.entity.Income;
 import com.gulshan.expensetracker.service.IncomeService;
 import jakarta.validation.Valid;
@@ -16,12 +17,12 @@ public class IncomeController {
     private final IncomeService service;
 
     @PostMapping
-    public Income create(@Valid @RequestBody Income income){
+    public IncomeDTO create(@Valid @RequestBody IncomeDTO income){
         return service.save(income);
     }
 
     @GetMapping
-    public List<Income> getAll(){
+    public List<IncomeDTO> getAll(){
         return service.findAll();
     }
 }
