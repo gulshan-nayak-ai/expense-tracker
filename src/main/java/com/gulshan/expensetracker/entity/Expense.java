@@ -41,7 +41,8 @@ public class Expense {
     @Enumerated(EnumType.STRING)
     private ExpenseType expenseType;
 
-    @NotNull
-    private YearMonth monthYear;
+    private Integer month;
+
+    private Integer year;
 
 }

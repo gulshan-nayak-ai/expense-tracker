@@ -10,15 +10,7 @@ import java.time.YearMonth;
 @Mapper(componentModel = "spring")
 public interface  ExpenseMapper {
 
-    @Mapping(target = "monthYear",
-            expression = "java(mapYearMonth(dto.getMonthYear()))")
     Expense toEntity(ExpenseDTO dto);
 
-    @Mapping(target = "monthYear",
-            expression = "java(entity.getMonthYear().toString())")
     ExpenseDTO toDTO(Expense entity);
-
-    default YearMonth mapYearMonth(String value){
-        return value != null ? YearMonth.parse(value) : null;
-    }
 }

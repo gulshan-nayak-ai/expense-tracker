@@ -1,12 +1,11 @@
 package com.gulshan.expensetracker.dto;
 
 import com.gulshan.expensetracker.constant.ExpenseType;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.YearMonth;
 
 @Data
 public class ExpenseDTO {
@@ -27,5 +26,11 @@ public class ExpenseDTO {
 
     private ExpenseType expenseType;
 
-    private String monthYear;
+    @NotNull
+    @Min(1)
+    @Max(12)
+    private Integer month;
+
+    @NotNull
+    private Integer year;
 }

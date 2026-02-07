@@ -29,5 +29,8 @@ public class Income {
 
     private String bank;
 
-    private YearMonth monthYear;
+
+    private Integer month;
+
+    private Integer year;
 }

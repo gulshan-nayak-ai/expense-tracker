@@ -34,6 +34,7 @@ public class FutureExpense {
 
     private BigDecimal actualAmount;
 
-    @NotNull
-    private YearMonth monthToBeSpent;
+    private Integer month;
+
+    private Integer year;
 }
