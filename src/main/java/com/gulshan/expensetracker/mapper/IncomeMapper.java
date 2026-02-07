@@ -1,22 +1,22 @@
 package com.gulshan.expensetracker.mapper;
 
-import com.gulshan.expensetracker.dto.ExpenseDTO;
-import com.gulshan.expensetracker.entity.Expense;
+import com.gulshan.expensetracker.dto.IncomeDTO;
+import com.gulshan.expensetracker.entity.Income;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.time.YearMonth;
 
 @Mapper(componentModel = "spring")
-public interface  ExpenseMapper {
+public interface IncomeMapper {
 
     @Mapping(target = "monthYear",
             expression = "java(mapYearMonth(dto.getMonthYear()))")
-    Expense toEntity(ExpenseDTO dto);
+    Income toEntity(IncomeDTO dto);
 
     @Mapping(target = "monthYear",
             expression = "java(entity.getMonthYear().toString())")
-    ExpenseDTO toDTO(Expense entity);
+    IncomeDTO toDTO(Income entity);
 
     default YearMonth mapYearMonth(String value){
         return value != null ? YearMonth.parse(value) : null;
