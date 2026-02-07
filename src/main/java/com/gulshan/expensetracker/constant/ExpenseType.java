@@ -6,5 +6,6 @@ public enum ExpenseType {
     INVESTMENT,
     EMI,
     SUBSCRIPTION,
-    OTHER
+    OTHER,
+    FIXED
 }

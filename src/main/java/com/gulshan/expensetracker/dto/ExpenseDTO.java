@@ -5,19 +5,20 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.YearMonth;
+
 
 @Data
 public class ExpenseDTO {
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Expense name cannot be empty")
     private String expense;
 
     @NotNull
     @Positive
     private BigDecimal amount;
 
+    @NotBlank
     private String bank;
 
     private Boolean isSent;
