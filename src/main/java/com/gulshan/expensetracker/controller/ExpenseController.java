@@ -2,6 +2,7 @@ package com.gulshan.expensetracker.controller;
 
 import com.gulshan.expensetracker.entity.Expense;
 import com.gulshan.expensetracker.service.ExpenseService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class ExpenseController {
     private final ExpenseService service;
 
     @PostMapping
-    public Expense create(@RequestBody Expense expense){
+    public Expense create(@Valid @RequestBody Expense expense){
         return service.save(expense);
     }
 

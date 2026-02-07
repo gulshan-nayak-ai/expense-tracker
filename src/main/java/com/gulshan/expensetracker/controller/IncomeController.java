@@ -2,6 +2,7 @@ package com.gulshan.expensetracker.controller;
 
 import com.gulshan.expensetracker.entity.Income;
 import com.gulshan.expensetracker.service.IncomeService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class IncomeController {
     private final IncomeService service;
 
     @PostMapping
-    public Income create(@RequestBody Income income){
+    public Income create(@Valid @RequestBody Income income){
         return service.save(income);
     }
 
