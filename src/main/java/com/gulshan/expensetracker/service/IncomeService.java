@@ -22,7 +22,10 @@ public class IncomeService {
     }
 
     public List<IncomeDTO> findAll(){
-        return repository.findAll();
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDTO)
+                .toList();
     }
 
 }

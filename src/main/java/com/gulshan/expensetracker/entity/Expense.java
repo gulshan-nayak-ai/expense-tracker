@@ -34,7 +34,6 @@ public class Expense {
     private String bank;
 
     @NotNull
-    @Enumerated(EnumType.STRING)
     private Boolean isSent;
 
     private Boolean isPaid;

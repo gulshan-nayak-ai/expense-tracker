@@ -1,5 +1,6 @@
 package com.gulshan.expensetracker.controller;
 
+import com.gulshan.expensetracker.dto.AuthRequest;
 import com.gulshan.expensetracker.utility.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
