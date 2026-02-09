@@ -29,7 +29,7 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public String login(@RequestBody AuthRequest request){
+    public AuthResponse  login(@RequestBody AuthRequest request){
 
         authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -38,7 +38,9 @@ public class AuthController {
                 )
         );
 
-        return jwtUtil.generateToken(request.getUsername());
+        String token = jwtUtil.generateToken(request.getUsername());
+
+        return new AuthResponse(token);
     }
 
     // ✅ Register
